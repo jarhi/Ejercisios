@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    Scanner entrada = new Scanner (System.in);
+    System.out.println ("Ingrese el número de meses:");
+    float NM = entrada.nextFloat ();
+    double prec, pri, desc, deu, cuo;
+    if (NM >= 1 && NM <= 65) {
+      prec= 23000 * 1.13;
+      desc = 0;
+      if (NM == 36) {
+        desc = prec * 0.2;
+        pri = (prec - desc) * 0.15;
+        deu = (prec - desc) - pri;
+      } else {
+        pri = prec * 0.15;
+        deu = prec - pri;
+    }
+    cuo = deu /NM;
+    System.out.println ("Precio: "+prec);
+    System.out.println ("Descuento: "+desc);
+    System.out.println ("Deuda: "+deu);
+    System.out.println ("Cuota: "+cuo);
+      } else {
+    System.out.println ("No se pudo");
+     }
+  }
+}
